@@ -78,3 +78,24 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 void housekeeping_task_user(void) {
     housekeeping_task_keychron();
 }
+
+bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+    uint8_t current_layer = get_highest_layer(layer_state);
+
+    switch (current_layer) {
+        case MAC_FN:
+        case WIN_FN:
+            if (keymap_config.nkro) {
+                rgb_matrix_set_color(84, 0, 255, 0);
+            }
+            else {
+                rgb_matrix_set_color(84, 255, 0, 0);
+            }
+            break;
+
+        default:
+            break;
+    }
+    
+    return true;
+}
