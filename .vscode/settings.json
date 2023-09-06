@@ -7,7 +7,12 @@
         "**/.build": true,
         "**/*.hex": true,
         "**/*.bin": true,
-        "**/*.uf2": true
+        "**/*.uf2": true,
+        "docs/**": true,
+        "data/**": true,
+        "layouts/**": true,
+        "lib/**": true,
+        "tests/**": true,
     },
     "files.associations": {
         "*.h": "c",
